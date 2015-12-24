@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Class AppController
  *
- * This controller is the main part of this Bundle
+ * This controller is the main part of this Bundle.
  *
  * @package AppBundle\Controller
  */
