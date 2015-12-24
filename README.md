@@ -19,7 +19,7 @@ All languages are configured in YourApp/app/config/routing.yml
      prefix:   /{_locale}
      type:     annotation
      requirements:
-         # The first "|" makes it kinda optional
+         # The first "|" makes the locale optional
          _locale: "|de|en"
 ```
 
@@ -31,7 +31,6 @@ You can change the _locale parameter however you want. Maybe you want to add rus
      prefix:   /{_locale}
      type:     annotation
      requirements:
-         # The first "|" makes it kinda optional
          _locale: "|de|en|ru"
 ```
 

@@ -3,5 +3,5 @@ app:
     prefix:   /{_locale}
     type:     annotation
     requirements:
-        # The first "|" makes it kinda optional
+        # The first "|" makes the locale optional
         _locale: "|de|en"
