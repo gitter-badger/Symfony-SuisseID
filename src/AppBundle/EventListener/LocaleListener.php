@@ -23,23 +23,6 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class LocaleListener implements EventSubscriberInterface
 {
     /**
-     * @var string
-     */
-    private $defaultLocale;
-
-    /**
-     * LocaleListener constructor.
-     *
-     * If no default locale is provided, it will just take english.
-     *
-     * @param string $defaultLocale
-     */
-    public function __construct($defaultLocale = 'en')
-    {
-        $this->defaultLocale = $defaultLocale;
-    }
-
-    /**
      * @param GetResponseEvent $event
      */
     public function onKernelRequest(GetResponseEvent $event)
@@ -54,7 +37,7 @@ class LocaleListener implements EventSubscriberInterface
             $request->getSession()->set('_locale', $locale);
         } else {
             // if no explicit locale has been set on this request, use one from the session
-            $request->setLocale($request->getSession()->get('_locale', $this->defaultLocale));
+            $request->setLocale($request->getSession()->get('_locale', $request->getPreferredLanguage()));
         }
     }
 
