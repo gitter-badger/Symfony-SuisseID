@@ -23,27 +23,6 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 class LocaleListener implements EventSubscriberInterface
 {
     /**
-     * @param GetResponseEvent $event
-     */
-    public function onKernelRequest(GetResponseEvent $event)
-    {
-        $request = $event->getRequest();
-
-        if (!$request->hasPreviousSession()) { // First visit
-            $request->getSession()->set('_locale', $request->getPreferredLanguage());
-            $request->setLocale($request->getPreferredLanguage());
-            return;
-        }
-
-        $locale = $request->attributes->get('_locale');
-
-        // try to see if the locale has been set as a _locale routing parameter
-        if (empty($locale)) { // No _locale supplied
-            $request->setLocale($request->getSession()->get('_locale'));
-        }
-    }
-
-    /**
      * @return array
      */
     public static function getSubscribedEvents()
@@ -52,5 +31,27 @@ class LocaleListener implements EventSubscriberInterface
             // must be registered before the default Locale listener
             KernelEvents::REQUEST => array(array('onKernelRequest', 17)),
         );
+    }
+
+    /**
+     * @param GetResponseEvent $event
+     */
+    public function onKernelRequest(GetResponseEvent $event)
+    {
+        $request = $event->getRequest();
+
+        if (!$request->hasPreviousSession()){ // First visit
+            $request->getSession()->set('_locale', $request->getPreferredLanguage());
+            $request->setLocale($request->getPreferredLanguage());
+
+            return;
+        }
+
+        $locale = $request->attributes->get('_locale');
+
+        // try to see if the locale has been set as a _locale routing parameter
+        if (empty($locale)){ // No _locale supplied
+            $request->setLocale($request->getSession()->get('_locale'));
+        }
     }
 }
