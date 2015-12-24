@@ -13,3 +13,10 @@ remove_tailing_slash:
     requirements:
         url: .*/$
     methods: [GET]
+
+missing_locale:
+    path: /{url}
+    defaults: { _controller: AppBundle:Usability:localeRedirect }
+    requirements:
+        url: .*
+    methods: [GET]
