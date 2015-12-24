@@ -5,3 +5,11 @@ app:
     requirements:
         # The first "|" makes the locale optional
         _locale: "|de|en"
+
+# Removes trailing slash on request
+remove_tailing_slash:
+    path: /{url}
+    defaults: { _controller: AppBundle:Usability:removeTrailingSlash }
+    requirements:
+        url: .*/$
+    methods: [GET]
