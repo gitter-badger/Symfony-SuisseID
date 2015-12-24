@@ -9,6 +9,11 @@ Feel free to fork this repo.
 
 # Installation
 
+# Features
+
+* Optional multilingual routing
+* Prepared configurations in AppBundle for easier potential refactoring of standalone bundle
+
 # Add or remove languages
 
 All languages are configured in YourApp/app/config/routing.yml

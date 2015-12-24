@@ -31,6 +31,8 @@ class UsabilityController extends Controller
     }
 
     /**
+     * This route decides wheater a request has a missing locale or it is a missing page
+     *
      * @param Request $request
      *
      * @return Response
