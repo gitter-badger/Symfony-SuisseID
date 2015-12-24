@@ -18,6 +18,10 @@ class AppController extends Controller
 {
     /**
      * @Route("/", name="homepage")
+     *
+     * @param Request $request
+     *
+     * @return Response
      */
     public function indexAction(Request $request)
     {
@@ -28,15 +32,4 @@ class AppController extends Controller
         );
     }
 
-    /**
-     * @Route("/test", name="test_route")
-     *
-     * @param Request $request
-     *
-     * @return Response
-     */
-    public function testAction(Request $request)
-    {
-        return new Response($request->getLocale());
-    }
 }
