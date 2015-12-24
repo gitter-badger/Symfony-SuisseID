@@ -6,6 +6,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class AppController
+ *
+ * This controller is the main part of this Bundle
+ *
+ * @package AppBundle\Controller
+ */
 class AppController extends Controller
 {
     /**

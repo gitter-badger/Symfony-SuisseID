@@ -1,3 +1,7 @@
-app:
+app_locale:
     resource: "@AppBundle/Controller/"
+    prefix:   /{_locale}
     type:     annotation
+    requirements:
+        # The first "|" makes it kinda optional
+        _locale: "|de|en"
