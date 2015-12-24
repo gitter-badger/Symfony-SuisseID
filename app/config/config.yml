@@ -31,6 +31,10 @@ framework:
     fragments:       ~
     http_method_override: true
 
+# Assetic Configuration
+assetic:
+    use_controller: false
+
 # Twig Configuration
 twig:
     debug:            "%kernel.debug%"
