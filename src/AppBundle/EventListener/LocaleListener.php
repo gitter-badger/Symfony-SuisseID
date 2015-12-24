@@ -28,16 +28,18 @@ class LocaleListener implements EventSubscriberInterface
     public function onKernelRequest(GetResponseEvent $event)
     {
         $request = $event->getRequest();
-        if (!$request->hasPreviousSession()) {
+
+        if (!$request->hasPreviousSession()) { // First visit
+            $request->getSession()->set('_locale', $request->getPreferredLanguage());
+            $request->setLocale($request->getPreferredLanguage());
             return;
         }
 
+        $locale = $request->attributes->get('_locale');
+
         // try to see if the locale has been set as a _locale routing parameter
-        if ($locale = $request->attributes->get('_locale')) {
-            $request->getSession()->set('_locale', $locale);
-        } else {
-            // if no explicit locale has been set on this request, use one from the session
-            $request->setLocale($request->getSession()->get('_locale', $request->getPreferredLanguage()));
+        if (empty($locale)) { // No _locale supplied
+            $request->setLocale($request->getSession()->get('_locale'));
         }
     }
 
