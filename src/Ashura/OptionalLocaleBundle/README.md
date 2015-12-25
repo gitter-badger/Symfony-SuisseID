@@ -14,7 +14,15 @@ Add the OptionalLocaleBundle to your `composer.json`
 }
 ```
 
-or simply run ```composer require ashura/optional-locale-bundle:~1.0```
+or simply run 
+```bash
+$ composer require ashura/optional-locale-bundle:~1.0
+```
+
+This command requires you to have Composer installed globally, as explained
+in the [installation chapter](https://getcomposer.org/doc/00-intro.md)
+of the Composer documentation.
+
 
 Register the bundle in ``app/AppKernel.php``
 
