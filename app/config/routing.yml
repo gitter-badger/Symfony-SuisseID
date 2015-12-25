@@ -6,6 +6,10 @@ app:
         # The first "|" makes the locale optional
         _locale: "|de|en"
 
+optional_locale:
+    resource: "@OptionalLocaleBundle/Resources/config/routing.yml"
+    prefix:   /
+
 # Removes trailing slash on request
 remove_tailing_slash:
     path: /{url}
@@ -14,9 +18,3 @@ remove_tailing_slash:
         url: .*/$
     methods: [GET]
 
-missing_locale:
-    path: /{url}
-    defaults: { _controller: AppBundle:Usability:localeRedirect }
-    requirements:
-        url: .*
-    methods: [GET]

@@ -1,0 +1,13 @@
+optional_locale_homepage:
+    resource: @OptionalLocaleBundle/Controller/DefaultController.php
+    prefix: /{_locale}
+    type: annotation
+    requirements:
+        _locale: "|de|en"
+
+missing_locale:
+    path: /{url}
+    defaults: { _controller: AppBundle:Usability:localeRedirect }
+    requirements:
+        url: .*
+    methods: [GET]

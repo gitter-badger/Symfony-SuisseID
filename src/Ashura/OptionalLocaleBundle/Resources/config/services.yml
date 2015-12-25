@@ -1,0 +1,5 @@
+services:
+    app.locale_listener:
+        class: Ashura\OptionalLocaleBundle\EventListener\LocaleListener
+        tags:
+            - { name: kernel.event_subscriber }

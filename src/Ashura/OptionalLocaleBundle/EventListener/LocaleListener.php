@@ -3,12 +3,11 @@
  * Created by PhpStorm.
  * User: Dominik Müller (Ashura)
  * Date: 13.12.15
- * Time: 18:39
  *
  * @link http://aimei.ch/developers/Ashura
  */
 
-namespace AppBundle\EventListener;
+namespace Ashura\OptionalLocaleBundle\EventListener;
 
 
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -18,7 +17,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 /**
  * Class LocaleListener
  *
- * @package AppBundle\EventListener
+ * @package Ashura\OptionalLocaleBundle\EventListener
  */
 class LocaleListener implements EventSubscriberInterface
 {
