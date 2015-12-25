@@ -24,3 +24,26 @@ $bundles = array(
     new Ashura\OptionalLocaleBundle\OptionalLocaleBundle(),
 );
 ```
+
+Add the following code to your `routing.yml`
+
+```yaml
+optional_locale:
+    resource: "@OptionalLocaleBundle/Resources/config/routing.yml"
+    prefix:   /
+```
+
+Now add your locales you want to add to your routing:
+
+```yaml
+ app:
+     resource: "@AppBundle/Controller/"
+     prefix:   /{_locale}
+     type:     annotation
+     requirements:
+          # The first "|" is important so it will work
+         _locale: "|de|en"
+```
+
+You are done. 
+Now the routes will be automatically handled. Don't forget to add your translations.
