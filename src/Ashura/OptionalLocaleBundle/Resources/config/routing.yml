@@ -7,7 +7,7 @@ optional_locale_homepage:
 
 missing_locale:
     path: /{url}
-    defaults: { _controller: AppBundle:Usability:localeRedirect }
+    defaults: { _controller: OptionalLocaleBundle:Default:localeRedirect }
     requirements:
         url: .*
     methods: [GET]

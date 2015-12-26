@@ -11,7 +11,6 @@
 namespace Ashura\OptionalLocaleBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class DefaultControllerTest
@@ -26,7 +25,7 @@ class DefaultControllerTest extends WebTestCase
     public function testEnglischShowAction()
     {
         $client  = static::createClient();
-        $crawler = $client->request('GET', '/en/');
+        $crawler = $client->request('GET', '/en/ashura/optional_locale_test_route');
 
         $this->assertTrue($client->getResponse()->isSuccessful());
         $this->assertTrue($crawler->filter('html:contains("Welcome to")')->count() === 1);
@@ -38,7 +37,7 @@ class DefaultControllerTest extends WebTestCase
     public function testGermanShowAction()
     {
         $client  = static::createClient();
-        $crawler = $client->request('GET', '/de/');
+        $crawler = $client->request('GET', '/de/ashura/optional_locale_test_route');
 
         $this->assertTrue($client->getResponse()->isSuccessful());
         $this->assertTrue($crawler->filter('html:contains("Willkommen bei")')->count() === 1);
@@ -51,7 +50,16 @@ class DefaultControllerTest extends WebTestCase
     public function testOptionalEnglishShowAction()
     {
         $client  = static::createClient();
-        $crawler = $client->request('GET', '/', array(), array(), array('HTTP_ACCEPT_LANGUAGE' => 'en'));
+        $crawler = $client->request('GET', 'ashura/optional_locale_test_route', array(), array(),
+            array('HTTP_ACCEPT_LANGUAGE' => 'en')
+        );
+
+        $this->assertTrue($client->getResponse()->isSuccessful());
+        $this->assertTrue($crawler->filter('html:contains("Welcome to")')->count() === 1);
+
+        $crawler = $client->request('GET', '/ashura/optional_locale_test_route', array(), array(),
+            array('HTTP_ACCEPT_LANGUAGE' => 'en')
+        );
 
         $this->assertTrue($client->getResponse()->isSuccessful());
         $this->assertTrue($crawler->filter('html:contains("Welcome to")')->count() === 1);
@@ -63,12 +71,16 @@ class DefaultControllerTest extends WebTestCase
     public function testOptionalGermanShowAction()
     {
         $client  = static::createClient();
-        $crawler = $client->request('GET', '/', array(), array(), array('HTTP_ACCEPT_LANGUAGE' => 'de'));
+        $crawler = $client->request('GET', 'ashura/optional_locale_test_route', array(), array(),
+            array('HTTP_ACCEPT_LANGUAGE' => 'de')
+        );
 
         $this->assertTrue($client->getResponse()->isSuccessful());
         $this->assertTrue($crawler->filter('html:contains("Willkommen bei")')->count() === 1);
 
-        $crawler = $client->request('GET', '/', array(), array(), array('HTTP_ACCEPT_LANGUAGE' => 'de'));
+        $crawler = $client->request('GET', '/ashura/optional_locale_test_route', array(), array(),
+            array('HTTP_ACCEPT_LANGUAGE' => 'de')
+        );
 
         $this->assertTrue($client->getResponse()->isSuccessful());
         $this->assertTrue($crawler->filter('html:contains("Willkommen bei")')->count() === 1);

@@ -17,4 +17,3 @@ remove_tailing_slash:
     requirements:
         url: .*/$
     methods: [GET]
-
