@@ -7,6 +7,8 @@ This repository was created as a blueprint for multilingual Symfony applications
 
 Feel free to fork this repo.
 
+[![Build Status](https://travis-ci.org/CoalaJoe/Symfony-Base-2.8.svg?branch=master)](https://travis-ci.org/CoalaJoe/Symfony-Base-2.8)
+
 # Installation
 
 # Features
