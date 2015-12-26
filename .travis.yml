@@ -14,3 +14,6 @@ allow_failures:
 
 install:
   - composer install
+
+script:
+- phpunit -c app
