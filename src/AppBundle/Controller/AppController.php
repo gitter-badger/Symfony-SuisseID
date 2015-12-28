@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 class AppController extends Controller
 {
     /**
-     * @Route("/t", name="homepage")
+     * @Route("/", name="homepage")
      *
      * @param Request $request
      *

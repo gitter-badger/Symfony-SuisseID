@@ -1,0 +1,30 @@
+{
+  "name": "ashura/optional-locale-bundle",
+  "type": "symfony-bundle",
+  "description": "Use locales in route... If you want!",
+  "keywords": ["locale", "routing"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dominik Müller (Ashura)",
+      "email": "ashura@aimei.ch"
+    }
+  ],
+  "require": {
+    "symfony/symfony": "~2.3"
+  },
+  "require-dev": {
+    "ashura/optional-locale-bundle": "dev-master"
+  },
+  "target-dir": "Ashura/OptionalLocaleBundle",
+  "autoload": {
+    "psr-0": {
+      "Ashura\\OptionalLocaleBundle": ""
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  }
+}
