@@ -4,9 +4,58 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0d28a9ac3a51e139ad2850b5b1405534",
-    "content-hash": "a126b083263b24f8d7bb01752ef9232b",
+    "hash": "b993e0104198d57ce119fb6f8801fcad",
+    "content-hash": "e3e32a051ef5ceb19cee9f13f2628b2e",
     "packages": [
+        {
+            "name": "ashura/optional-locale-bundle",
+            "version": "dev-master",
+            "target-dir": "Ashura/OptionalLocaleBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CoalaJoe/OptionalLocaleBundle.git",
+                "reference": "da314e518cefd0baa2a22cc607265df08990d46b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CoalaJoe/OptionalLocaleBundle/zipball/da314e518cefd0baa2a22cc607265df08990d46b",
+                "reference": "da314e518cefd0baa2a22cc607265df08990d46b",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/symfony": "~2.3"
+            },
+            "require-dev": {
+                "ashura/optional-locale-bundle": "dev-master"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Ashura\\OptionalLocaleBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dominik Müller (Ashura)",
+                    "email": "ashura@aimei.ch"
+                }
+            ],
+            "description": "Use locales in route... If you want!",
+            "keywords": [
+                "locale",
+                "routing"
+            ],
+            "time": "2015-12-28 21:03:26"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.2.7",
@@ -2664,9 +2713,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.9"
