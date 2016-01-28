@@ -17,12 +17,16 @@
     </head>
     <body>
         {% block body %}{% endblock %}
+        {% block preJavascript %}
+        {% endblock %}
         {% block javascripts %}
         {% javascripts
             '@AppBundle/Resources/public/js/app.js'
         %}
         <script src="{{ asset_url }}"></script>
         {% endjavascripts %}
+        {% endblock %}
+        {% block postJavascript %}
         {% endblock %}
     </body>
 </html>
