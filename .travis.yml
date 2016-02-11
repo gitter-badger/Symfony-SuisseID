@@ -1,11 +1,5 @@
 language: php
 
-sudo: false
-
-cache:
-  directories:
-    - $HOME/.composer/cache/files
-
 matrix:
   fast_finish: true
   include:
@@ -17,11 +11,15 @@ matrix:
   allow_failures:
     - php: hhvm
 
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
 install:
   - composer install
 
-script:
-  - phpunit -c app
-
 before_script:
   - composer self-update
+
+script:
+  - phpunit -c app
