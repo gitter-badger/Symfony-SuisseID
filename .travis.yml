@@ -3,7 +3,6 @@ language: php
 matrix:
   fast_finish: true
   include:
-    - php: 5.4
     - php: 5.5
     - php: 5.6
     - php: 7.0
@@ -11,14 +10,19 @@ matrix:
   allow_failures:
     - php: hhvm
 
+services:
+  - mysql
+
 cache:
   directories:
     - $HOME/.composer/cache/files
 
 install:
+  - mysql -e 'create database `symfony`;'
   - composer install
 
 before_script:
+  - php bin/console doctrine:schema:update --force
   - composer self-update
 
 script:
