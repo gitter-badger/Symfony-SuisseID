@@ -22,7 +22,7 @@ install:
   - composer install
 
 before_script:
-  - php bin/console doctrine:schema:update --force
+  - php app/console doctrine:schema:update --force
   - composer self-update
 
 script:
